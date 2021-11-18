@@ -6,16 +6,18 @@
 */
 
 // CODE HERE
-
+const multiply = (num1, num2, cb) => {
+  cb(num1 * num2)
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// multiply(4, 3, answer => {
-//   console.log('The answer is ' + answer) //should console.log 12
-// })
-
+multiply(4, 3, answer => {
+  // console.log('The answer is ' + answer) //should console.log 12
+})
+// console.log(multiply)
 
 
 ////////// PROBLEMS 2 - 6 //////////
@@ -37,14 +39,17 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE 
 
+const first = (names, callback) => {
+  callback(names[0])
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// first(names, firstName => {
-//   console.log('The first name in names is ' + firstName)
-// })
+first(names, firstName => {
+  // console.log('The first name in names is ' + firstName)
+})
 
 
 
@@ -57,14 +62,17 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE
 
+const last = (arr, callback) => {
+  callback(arr[arr.length - 1])
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// last(names, lastName => {
-//   console.log('The last name in names is ' + lastName)
-// })
+last(names, lastName => {
+  // console.log('The last name in names is ' + lastName)
+})
 
 
 
@@ -76,9 +84,19 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   If it does, invoke the callback with true as the argument. 
   If the name does not exist, invoke the callback with false as the argument.
 */
+// var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE 
 
+const contains = (arr, name, callback) => {
+  for (let i = 0; i < arr.length; i++){
+    if (names === arr[i]){
+      callback(true)
+    }else {
+      callback(false)
+    }
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -101,8 +119,21 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
   Hint: you can use a nested for loop to do this.
 */
+// var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE
+
+const uniq = (arr, callback) => {
+  const answer = []
+  for(let i = 0; i < arr.length; i++){
+      const person = arr[i]
+        if (!answer.includes(person)){
+          answer.push(person)
+            console.log(person);
+        }
+  } console.log(answer);
+  return callback(answer)
+  }
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -113,7 +144,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE
 
-
+console.log(uniq(names, callback = uniqArr => `The new names array with all the duplicate items removed is [UNIQARRPARAM].`))
 
 ////////// PROBLEM 6 //////////
 
