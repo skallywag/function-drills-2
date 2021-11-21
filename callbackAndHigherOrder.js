@@ -17,7 +17,6 @@ const multiply = (num1, num2, cb) => {
 multiply(4, 3, answer => {
   console.log('The answer is ' + answer) //should console.log 12
 })
-// console.log(multiply)
 
 
 ////////// PROBLEMS 2 - 6 //////////
@@ -47,7 +46,7 @@ const first = (arr, cb) => {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-first(names, firstName => {
+first(names, firstName , () => {
   console.log('The first name in names is ' + firstName)
 }
 )
@@ -72,7 +71,7 @@ const last = (arr, callback) => {
 // CHECK YOUR ANSWER
 
 last(names, lastName => {
-  // console.log('The last name in names is ' + lastName)
+  console.log('The last name in names is ' + lastName)
 })
 
 
@@ -89,15 +88,17 @@ last(names, lastName => {
 
 // CODE HERE 
 
-// const contains = (arr, name, callback) => {
-//     arr.forEach((element) => {
-//         if(element === name){
-//             callback(true)
-//           }else{
-//               callback(false)
-//             }
-//           })
-//         }
+const contains = (arr, name, callback) => {
+
+// flag it!
+    arr.forEach((element) => {
+        if(element === name){
+            callback(true)
+          }else{
+              callback(false)
+            }
+          })
+        }
         
   const contains = (arr, name, callback) => {
         if (arr.includes(name)){
